@@ -4,12 +4,29 @@ var variableQ = document.getElementById('txtVariableQ');
 var variableK = document.getElementById('txtVariableK');
 var resultadoX = document.getElementById('txtResultadoX');
 
-function calcularPotencia(){
+function ejecutarFuncion(){    
+    var valorVariableN = parseInt(variableN.value); 
+    var valorVariableM = parseInt(variableM.value); 
+    var valorVariableQ = parseInt(variableQ.value); 
+    var valorVariableK = parseInt(variableK.value); 
+
+    resultadoX.value = calcularPotencia(valorVariableN, valorVariableM, valorVariableQ, valorVariableK);
+}
+
+function calcularPotencia(valorVariableN, valorVariableM, valorVariableQ, valorVariableK){
     var resultadoDeLaOperacion;
+    var resultadoUno;
+    var resultadoDos;
+    var resultadoTres;
 
-    resultadoDeLaOperacion = ((3 * Math.pow(variableN.value, 8) + Math.pow(variableM.value, 7)) / Math.pow(Math.sqrt((3 * variableN.value + 8 * variableQ.value) /2 * variableM.value) , 1/4))
-    + ((1 / (Math.pow(Math.pow(variableN.value, 8) + variableK.value, 1/3) - Math.log(3 * Math.pow(variableN.value, variableK.value + 3)))) / ((3 * Math.pow(variableM.value, 7) - 4 * Math.pow(variableK.value, 6)) 
-    / (2 * Math.pow(variableN.value, 5) + Math.pow(Math.pow(variableN.value, 3), 1/7))));
+    resultadoUno = ((3 * Math.pow(valorVariableN, 8) + Math.pow(valorVariableM, 7)) / Math.pow(Math.sqrt((3 * valorVariableN + 8 * valorVariableQ) /2 * valorVariableM) , 1/4));
+    
+    resultadoDos = (1 / (Math.pow(Math.pow(valorVariableN, 8) + valorVariableK, 1/3) - Math.log(3 * Math.pow(valorVariableN, valorVariableK + 3))));
+    
+    resultadoTres = ((3 * Math.pow(valorVariableM, 7) - 4 * Math.pow(valorVariableK, 6)) / (2 * Math.pow(valorVariableN, 5) + Math.pow(Math.pow(valorVariableN, 3), 1/7)));
+    
 
-    resultadoX.value = resultadoDeLaOperacion;
+    resultadoDeLaOperacion = resultadoUno + (resultadoDos/resultadoTres);
+
+    return resultadoDeLaOperacion;
 }
