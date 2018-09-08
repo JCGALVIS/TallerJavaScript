@@ -1,0 +1,45 @@
+body{
+    font-family: "Open Sans",Arial,sans-serif;
+    font-size: 14px;
+    background: #6c757d;
+    margin: 0px 0px 0px 0px;
+}
+
+.contenedorFijo{
+    background: #FFFFFF;
+	margin: 0 auto;
+	border: 1px solid #000000;
+    text-align: left;
+    width: 440px;
+    padding: 20px;
+}
+
+.textInputNumerico{
+    padding: 6px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    width: 30%;
+    text-align: right;
+}
+
+.selectPequeno{
+    padding: 6px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    width: 70%;
+}
+
+input[type="button"], input[type="reset"]{
+    padding: 6px;
+    border: 1px solid transparent;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 6px;
+    width: 30%;
+}
+
+input[type="button"]:hover, input[type="reset"]:hover{
+    background-color: #008bbb;
+    cursor: pointer;
+}

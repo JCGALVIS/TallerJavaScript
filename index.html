@@ -4,63 +4,61 @@
 <head>
     <title></title>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="estilo.css" type="text/css" />
 </head>
 
 <body>
     <form>
-        <div>
+        <div class="contenedorFijo">
             <div>
-                <div>n:</div>
-                <div>
-                    <input type="text" id="txtVariableN" />
-                </div>
-            </div>
-            <div>
-                <div>m:</div>
-                <div>
-                    <input type="text" id="txtVariableM" />
-                </div>
-            </div>
-            <div>
-                <div>q:</div>
-                <div>
-                    <input type="text" id="txtVariableQ" />
-                </div>
-            </div>
-            <div>
-                <div>k:</div>
-                <div>
-                    <input type="text" id="txtVariableK" />
-                </div>
-            </div>
-            <div>
-                <div>x:</div>
-                <div>
-                    <input type="text" id="txtResultadoX" />
-                </div>
-            </div>
-            <div>
-                <div>Variables:</div>
-                <div>
-                    <select>
-                        <option value="-1">-- Selecione --</option>
-                        <option value="n">n</option>
-                        <option value="m">m</option>
-                        <option value="q">q</option>
-                        <option value="k">k</option>
-                    </select>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <input type="button" value="Ok" onclick="ejecutarFuncion();" />
-                </div>
-                <div>
-                    <input type="reset" value="reset" />
-                </div>
-                <div>
-                    <input type="button" value="Limpiar variable" />
-                </div>
+                <h3>Calculo trigonometrico</h3>
+                <table>
+                    <tr>
+                        <td  style="text-align: right;">n:</td>
+                        <td>
+                            <input type="text" class="textInputNumerico" id="txtVariableN" />
+                        </td>
+                        <td style="text-align: right;">m:</td>
+                        <td>
+                            <input type="text" class="textInputNumerico" id="txtVariableM" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">q:</td>
+                        <td>
+                            <input type="text" class="textInputNumerico" id="txtVariableQ" />
+                        </td>
+                        <td style="text-align: right;">k:</td>
+                        <td>
+                            <input type="text"  class="textInputNumerico"id="txtVariableK" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">Variables:</td>
+                        <td>
+                            <select id="ddlListaDeVariables" class="selectPequeno">
+                                <option value="-1">-- Selecione --</option>
+                                <option value="n">n</option>
+                                <option value="m">m</option>
+                                <option value="q">q</option>
+                                <option value="k">k</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr style="font-size: 16px;">
+                        <td style="text-align: right;"><b>x:</b></td>
+                        <td colspan="3">
+                            <b><label id="lblresultadoX"></label></b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: right;">
+                            <input type="button" value="Ok" onclick="ejecutarFuncion();" />
+                            <input type="reset" value="reset" />
+                            <input type="button" value="Limpiar variable" onclick="limpiarVariables();" />
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
     </form>

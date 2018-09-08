@@ -2,7 +2,8 @@ var variableN = document.getElementById('txtVariableN');
 var variableM = document.getElementById('txtVariableM');
 var variableQ = document.getElementById('txtVariableQ');
 var variableK = document.getElementById('txtVariableK');
-var resultadoX = document.getElementById('txtResultadoX');
+var resultadoX = document.getElementById('lblresultadoX');
+var listaDeVariables = document.getElementById('ddlListaDeVariables');
 
 function ejecutarFuncion(){    
     var valorVariableN = parseInt(variableN.value); 
@@ -10,7 +11,7 @@ function ejecutarFuncion(){
     var valorVariableQ = parseInt(variableQ.value); 
     var valorVariableK = parseInt(variableK.value); 
 
-    resultadoX.value = calcularPotencia(valorVariableN, valorVariableM, valorVariableQ, valorVariableK);
+    resultadoX.innerHTML = calcularPotencia(valorVariableN, valorVariableM, valorVariableQ, valorVariableK);
 }
 
 function calcularPotencia(valorVariableN, valorVariableM, valorVariableQ, valorVariableK){
@@ -29,4 +30,26 @@ function calcularPotencia(valorVariableN, valorVariableM, valorVariableQ, valorV
     resultadoDeLaOperacion = resultadoUno + (resultadoDos/resultadoTres);
 
     return resultadoDeLaOperacion;
+}
+
+function limpiarVariables(){
+    var valorOpcionSeleccionada =listaDeVariables.options[listaDeVariables.selectedIndex].text;
+
+    switch(valorOpcionSeleccionada){
+        case 'n':
+            variableN.value = '';
+            break;
+        case 'm':
+            variableM.value = '';
+            break;
+        case 'q':
+            variableQ.value = '';
+            break;
+        case 'k':
+            variableK.value = '';
+            break;
+        default:
+            alert('Debe seleccionar una variable.');
+
+    }
 }
